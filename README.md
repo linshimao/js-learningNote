@@ -28,7 +28,7 @@ console.log(document.body.clientTop);  //20
 # 在document下与offset相关的宽高
 ### 1. document.body.offsetWidth.
 ### 2. document.body.offsetHeight.
-- [ ] **这一对属性指的是元素的`border+padding+content的宽度和高度`，该属性和其内容是否超出元素大小无关，只和本来设定的border一级width和height有关**
+- [ ] **这一对属性指的是元素的`border+padding+content的宽度和高度`，该属性和其内容是否超出元素大小无关，只和本来设定的border以及width和height有关**
 
 ```
 		console.log(document.body.offsetWidth); //40 + 80 + 500 = 620
@@ -71,3 +71,35 @@ console.log(document.body.clientTop);  //20
 		console.log(mdiv.offsetLeft);//60
 		console.log(mdiv.offsetTop); //60
 ```
+
+# 与scroll相关的宽高
+### 1.scrollWidth和scrollHeight
+- [ ] `document.body`的scrollWidth和scrollHeight与`div`的scrollWidth和scrollHeight是有点区别的。(`document.body`在chrome与FF表现不一致，但`div`在chrome和FF表现是一致的)
+> 给定宽高小于浏览器窗口的时候scrollWidth和scrollHeight通常是浏览器窗口的高度
+
+- [ ] 给定宽高大于浏览器窗口，且`内容小于`给定宽高**scrollWidth:**给定的宽度 + 其所有的padding、margin 和 border,**scrollHeight:**给定的高度+其所有的padding、margin 和border.
+- [ ] 给定宽高大于浏览器窗口，且`内容大于`给定宽高**scrollWidth:**内容宽度+其所有的padding、margin和border，**scrollWidth:**内容高度+其所有的padding、margin 和border.
+
+# 坐标
+### 1.clientX和clientY
+- [ ] 相对于浏览器（可视区左上角0,0）的坐标。
+### 2.screenX和screenY
+- [ ] 相对于设备屏幕左上角(0,0)的坐标。
+### 3.offsetX和offsetY
+- [ ] 相对于事件源左上角(0,0)的坐标
+### 4.pageX和pageY
+- [ ] 相对于整个网页左上角(0,0)的坐标
+### 5.x和y
+- [ ] 相对于用css动态定位的最内层包容元素（chrome下不管有没有设置position都与1相等）
+
+
+
+
+
+
+
+
+
+
+
+
